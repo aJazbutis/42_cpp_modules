@@ -6,7 +6,7 @@
 /*   By: ajazbuti <ajazbuti@student.42heilbronn.de  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 19:18:50 by ajazbuti          #+#    #+#             */
-/*   Updated: 2022/08/28 20:57:07 by ajazbuti         ###   ########.fr       */
+/*   Updated: 2022/12/23 19:22:34 by ajazbuti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,17 @@ class	Array	{
 		Array	&operator=(Array const & rhs)	{
 			if (this == &rhs)
 				return (*this);
-			this->_size = rhs._size;
-			for (unsigned int i = 0; i < _size; i++)
-				this->_a[i] = rhs._a[i];
+			if (this->_size == rhs._size)	{
+				for (unsigned int i = 0; i < _size; i++)
+					this->_a[i] = rhs._a[i];
+			}
+			else	{
+				delete [] this->_a;
+				this->_size = rhs._size;
+				this->_a = new T[this->_size];
+				for (unsigned int i = 0; i < _size; i++)
+					this->_a[i] = rhs._a[i];
+			}
 			return (*this);
 		};
 		T	&operator[](unsigned int i)	{

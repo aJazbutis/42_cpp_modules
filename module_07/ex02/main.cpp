@@ -6,7 +6,7 @@
 /*   By: ajazbuti <ajazbuti@student.42heilbronn.de  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/28 19:55:32 by ajazbuti          #+#    #+#             */
-/*   Updated: 2022/08/28 20:59:54 by ajazbuti         ###   ########.fr       */
+/*   Updated: 2022/12/23 19:21:15 by ajazbuti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,17 @@ void	chcklks(void)	{
 int main(int, char**)
 {
 	atexit(chcklks);
+	std::cout << "	#############" << std::endl;
+	std::cout << "	# CanonTEST #" << std::endl;
+	std::cout << "	#############" << std::endl;
+	{
+		Array<int>	Bob;
+		Array<int>	Jon(42);
+		Array<int>	Jim(24);
+		Array<int>	Ben(Jon);
+		Bob = Jim;
+		getchar();
+	}
 	{
 	std::cout << "%%%%%%%%%%%%%%%%" << std::endl;
 	std::cout << "% providedTEST %" << std::endl;
